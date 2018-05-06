@@ -1,0 +1,54 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+$roundRadius : 15px;
+$roundBoxSize : 100px;
+$bottomLineColor : #d6d6d6;
+
+@mixin bottomLine{
+    border-bottom: 1px solid $bottomLineColor;
+}
+.home-wrapper{
+    padding-top: 55px;
+}
+.search-wrapper{
+    @include bottomLine;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+.roundImage{
+    overflow: hidden;
+    border-radius: $roundRadius;
+    width: $roundBoxSize;
+    height: $roundBoxSize;
+    
+   
+}
+.section-recommend{
+    @include bottomLine;
+    .boxs{
+        overflow: scroll;
+        .box{
+            max-width: $roundBoxSize;
+            margin-right: 20px;
+            .tag{
+                @extend .text-secondary
+            }
+        }
+    }
+}
+.section-listing{
+    .media:nth-child(2n){
+        .roundImage{
+            border-radius:50%;
+        }
+    }
+}
+.list-row{
+    @include bottomLine;
+}
+.dv-star-rating-empty-star{
+    i{
+        color: rgb(123, 123, 123);
+    }
+}
