@@ -8,12 +8,12 @@ class Recommend extends Component {
     state = {
         hasLoad: false
     }
-    componentWillMount(){
-        this.props.loadData().then(()=>{
-            this.setState({
-                hasLoad : true
-            })
+    async componentWillMount(){
+        await this.props.loadData()
+        this.setState({
+            hasLoad : true
         })
+        
     }
 
     
@@ -31,7 +31,7 @@ class Recommend extends Component {
         }
         if(!this.state.hasLoad)
             return (<div className="w-100 text-center"> <img src={loading}  alt="loading..." /></div>)
-        return ( <div>找不到沒有相關應用</div>)
+        return ( <div>找不到相關應用</div>)
         
     }
     
@@ -49,7 +49,5 @@ class Recommend extends Component {
     }
 }
 
-const mapStateToProps = state =>{
-    return state
-}
+const mapStateToProps = state => state
 export default connect(mapStateToProps,actionCreators)(Recommend);

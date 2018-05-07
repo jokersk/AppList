@@ -62,15 +62,13 @@ class AppList extends Component {
         }
         if(!this.state.hasLoad)
             return (<div className="w-100 text-center" > <img src={loading}  alt="loading..." /></div>)
-        return ( <div>找不到沒有相關應用</div>)
+        return ( <div>找不到相關應用</div>)
 
         
     }
 }
 
 
-const mapStateToProps = state =>{
-    return  state;
-}
+const mapStateToProps = state => state
 
 export default connect(mapStateToProps,actionCreators)(AppList);

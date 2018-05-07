@@ -8,7 +8,7 @@ export function getRecommedHttp(state,action){
 
 export function filter(state,action,defaultState)
 {
-    const rgxp = new RegExp(action.value, "g");
+    const rgxp = new RegExp(action.value, "gi");
     const newRecommendList = state.originalRecommendData.filter(p => filterEle(p, rgxp))
     const newAppList = state.originalAppListData.filter(p => filterEle(p, rgxp))
 

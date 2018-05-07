@@ -1,13 +1,6 @@
 import React from 'react';
-
-
 import StarRatings from 'react-star-ratings';
-
 import "../style/animate.css"
-
-
-    
-
 
 const List = ({title,cate,image,rate,rateUser}) => {
     
